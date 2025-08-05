@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pak Trends - Culture</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .hero-section .container {
+      z-index: 2;
+    }
+
+    .hero-section h1, .hero-section p {
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    .culture-section-img {
+      max-height: 300px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .culture-section-img:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      letter-spacing: 0.3px;
+      transition: all 0.3s ease;
+    }
+
+    footer:hover {
+      background-color: #F8F9FA;
+    }
+
+    .read-more {
+      color: #1A8754;
+      cursor: pointer;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-success" href="#">Pak Trends</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="cities.html">Cities</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">Culture</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section text-white text-center d-flex align-items-center" style="background-image: url('images/culture.jpg'); background-size: cover; background-position: center; height: 80vh; position: relative;">
+  <div class="overlay" style="position: absolute; inset: 0; background-color: rgba(0,0,0,0.6);"></div>
+  <div class="container position-relative z-2">
+    <h1 class="display-3 fw-bold">Culture of Pakistan</h1>
+    <p class="lead">Celebrate the diverse traditions of our beautiful provinces</p>
+  </div>
+</section>
+
+<!-- Punjab -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <img src="images/p cul 1.jpg" alt="Punjab Culture" class="img-fluid culture-section-img shadow" />
+      </div>
+      <div class="col-md-6">
+        <h2 class="text-success fw-bold">🌿 Punjab
+The Heart of Pakistan</h2>
+        <p class="short-text">
+          Punjab is known for its lively music, Bhangra dance, colorful festivals like Basant, and delicious food like saag and makki di roti.
+        </p>
+        <p class="long-text d-none">
+         Punjab, the most populous province of Pakistan, is a vibrant land of colors, hospitality, and heritage. The people of Punjab are known for their warm-hearted nature, lively traditions, and strong sense of identity. The cultural fabric is deeply woven with classical music, Bhangra dances, folk tales like Heer Ranjha, and colorful festivals such as Basant and Lohri. Cities like Lahore are cultural hubs, blending Mughal architecture with modern vibrance. The food culture is equally rich — from spicy street food to traditional dishes like Saag, Makki di Roti, and Lassi. Punjabis are expressive, passionate, and proud of their history, making Punjab a symbol of life, love, and celebration.
+        </p>
+        <span class="read-more" onclick="toggleText(this)">Read more</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sindh -->
+<section class="py-5">
+  <div class="container">
+    <div class="row align-items-center flex-md-row-reverse">
+      <div class="col-md-6">
+        <img src="images/s cul 1.jpg" alt="Sindh Culture" class="img-fluid culture-section-img shadow" />
+      </div>
+      <div class="col-md-6">
+        <h2 class="text-success fw-bold"> 🏜️ Sindh
+The Land of Sufis and Civilizations</h2>
+        <p class="short-text">
+ Sindhi culture is rich with Ajrak, Sindhi Topi, and the spiritual vibes of Sufi music and dance.
+        </p>
+        <p class="long-text d-none">
+         Sindh is a province steeped in ancient heritage and spiritual mysticism. Home to the Indus Valley Civilization (Mohenjo-Daro), Sindh reflects a unique blend of history, spiritualism, and cultural harmony. Its people are deeply influenced by the teachings of Sufi saints like Shah Abdul Latif Bhittai, and the Ajrak and Sindhi Topi are proud symbols of identity. The province is also home to a distinct language, music, and crafts, especially Sindhi embroidery and mirror work. Cities like Karachi, while modern, still echo with cultural depth. Sindhi cuisine — like Sai Bhaji and Sindhi Biryani — reflects the diversity and warmth of its people. Sindh represents peace, resilience, and the soul of ancient Pakistan. The land of Shah Abdul Latif Bhittai, Sindh celebrates life with mystical poetry, rilli quilts, and handwoven crafts. Mohenjo-Daro reminds us of an ancient civilization, while Sufi shrines reflect the spiritual depth of its people.
+        </p>
+        <span class="read-more" onclick="toggleText(this)">Read more</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KPK -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <img src="images/kpk cul1.jpg" alt="KPK Culture" class="img-fluid culture-section-img shadow" />
+      </div>
+      <div class="col-md-6">
+        <h2 class="text-success fw-bold">⛰️ Khyber Pakhtunkhwa (KPK)
+The Land of Courage and Hospitality</h2>
+        <p class="short-text">
+          KPK is known for its strong traditions, Attan dance, Pakol caps, and green tea (Kahwa).
+        </p>
+        <p class="long-text d-none">
+         Khyber Pakhtunkhwa, nestled among majestic mountains and valleys, is a land rich with Pashtun traditions, bravery, and hospitality. Its people are known for their strong code of honor — Pashtunwali, which emphasizes respect, bravery, and protection of guests. Traditional dances like Attan, poetry of Khushal Khan Khattak, and cultural attire such as the Pakol hat and waistcoat, all reflect the depth of KPK's culture. From the scenic Swat Valley to historic Peshawar, the region is full of stories and strength. Local food like Chapli Kebab, Kabuli Pulao, and green tea (Kahwa) adds to the cultural charm. KPK is a beautiful blend of nature, valor, and heritage. With poetic souls and strong values, Pashtun culture celebrates hospitality and courage. The mountainous beauty of Swat and Chitral adds to its aesthetic charm. Music with rabab, and storytelling around fire, still lives on in rural areas.
+        </p>
+        <span class="read-more" onclick="toggleText(this)">Read more</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Balochistan -->
+<section class="py-5">
+  <div class="container">
+    <div class="row align-items-center flex-md-row-reverse">
+      <div class="col-md-6">
+        <img src="images/b cul 1.jpg" alt="Balochistan Culture" class="img-fluid culture-section-img shadow" />
+      </div>
+      <div class="col-md-6">
+        <h2 class="text-success fw-bold">🏝️ Balochistan
+The Hidden Gem of Pakistan</h2>
+        <p class="short-text">
+          Balochi culture reflects simplicity, strength, and honor, with traditional embroidery and folk music at its core.
+        </p>
+        <p class="long-text d-none">
+         Balochistan, the largest yet least explored province, is a land of raw beauty, pride, and tradition. With vast deserts, rocky mountains, and untouched coastlines, its landscape is as unique as its culture. The Baloch people are known for their resilience, strong tribal values, and distinct customs. Their traditional dress, Balochi embroidery, folk music, and epic poetry are rich in identity. Cultural gatherings like Mehndi nights, camel races, and Balochi sword dance showcase their heritage. Though often misunderstood, Balochistan offers immense cultural wealth through its people and land. The cuisine — like Sajji, Kaak, and Balochi Pilaf — reflects simplicity and strength. Balochistan is a symbol of mystery, depth, and untamed beauty. From desert festivals to mountain poetry, Baloch traditions remain untouched by time. Sajji and lamb dishes fill the air with aroma, while hospitality, storytelling, and devotion to heritage make the Baloch people truly special.
+        </p>
+        <span class="read-more" onclick="toggleText(this)">Read more</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-white text-center py-4" style="background-color: #1A8754; font-size: 0.95rem;">
+  <div class="container">
+    <p class="mb-1 fw-semibold">Pak Trends</p>
+    <p class="mb-2">Exploring Pakistan’s culture, cities & lifestyle</p>
+    <p class="mb-0">Designed with 💚 by <strong>Nayab Naeem</strong> &copy; 2025</p>
+  </div>
+</footer>
+
+<!-- Bootstrap + JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Toggle Read More Script -->
+<script>
+  function toggleText(element) {
+    const parent = element.parentElement;
+    const shortText = parent.querySelector(".short-text");
+    const longText = parent.querySelector(".long-text");
+    
+    if (longText.classList.contains("d-none")) {
+      shortText.classList.add("d-none");
+      longText.classList.remove("d-none");
+      element.textContent = "Read less";
+    } else {
+      shortText.classList.remove("d-none");
+      longText.classList.add("d-none");
+      element.textContent = "Read more";
+    }
+  }
+</script>
+
+</body>
+</html>
