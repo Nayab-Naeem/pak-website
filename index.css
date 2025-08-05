@@ -1,0 +1,99 @@
+body {
+  background-color: #F8F9FA;
+  color: #1E1E1E;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: url('images/mosque.jpg') no-repeat center center/cover;
+  padding-top: 80px; /* space for fixed navbar */
+}
+
+.hero-text {
+  background-color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+}
+
+
+.section-title {
+  color: #1A8754;
+}
+
+.section-title {
+  color: #1A8754;
+  font-weight: 600;
+}
+
+.card-title {
+  color: #1E1E1E;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.hover-effect:hover {
+  transform: scale(1.03);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* For slider images */
+.card-img-top {
+  height: 300px;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Optional: Limit total card height */
+.card {
+  height: 320px;
+}
+
+/* Headings */
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  background: none;
+  border: none;
+  z-index: 10;
+}
+
+.carousel-control-prev {
+  left: -40px; /* adjust left position */
+}
+
+.carousel-control-next {
+  right: -40px; /* adjust right position */
+}
+.carousel-control-prev i:hover,
+.carousel-control-next i:hover {
+  color: #1A8754; /* Your brand green */
+  transition: 0.3s ease;
+}
+
+.card-title a {
+  color: #1E1E1E; /* default text color */
+  transition: color 0.3s ease;
+}
+
+.card-title a:hover {
+  color: #1A8754; /* primary green on hover */
+  text-decoration: underline;
+}
+
+.card-title a:visited {
+  color: #A0A0A0; /* secondary gray if link is visited */
+}
+
+footer a:hover {
+  color: #1A8754 !important; /* Pakistani green */
+}
