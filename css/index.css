@@ -6,7 +6,7 @@ body {
 /* Hero Section */
 .hero {
   height: 100vh;
-  background: url('images/mosque.jpg') no-repeat center center/cover;
+  background: url('/images/mosque.jpg') no-repeat center center/cover;
   padding-top: 80px; /* space for fixed navbar */
 }
 
