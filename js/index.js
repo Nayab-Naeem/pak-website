@@ -31,3 +31,39 @@ document.getElementById('footer').innerHTML = `
     </div>
   </footer>
 `;
+      // Navbar for all webpages 
+      
+const isSubPage = window.location.pathname.includes('/pages/');
+const base = isSubPage ? '../' : '';
+
+document.getElementById('navbar').innerHTML = `
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="${base}index.html">
+        <img src="${base}images/logo.png" alt="Pak Trends" height="50">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+          <li class="nav-item"><a class="nav-link" href="${base}index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="${base}pages/cities.html">Cities</a></li>
+          <li class="nav-item"><a class="nav-link" href="${base}pages/food.html">Food</a></li>
+          <li class="nav-item"><a class="nav-link" href="${base}pages/culture.html">Culture</a></li>
+          <li class="nav-item ms-2"><a class="btn btn-success px-4" href="${base}pages/signin.html">Sign In</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+`;
+
+// ===== AUTO ACTIVE LINK =====
+const currentPage = window.location.pathname.split('/').pop();
+
+document.querySelectorAll('.nav-link').forEach(link => {
+  const linkPage = link.getAttribute('href').split('/').pop();
+  if (linkPage === currentPage) {
+    link.classList.add('active');
+  }
+});
