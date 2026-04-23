@@ -68,39 +68,5 @@ document.querySelectorAll('.nav-link').forEach(link => {
   }
 });
 
-// ===== Explore by Category Logic of JS ===== 
 
-// Scroll-triggered reveal + subtle parallax on mouse move
-document.addEventListener('DOMContentLoaded', () => {
-  const cards = document.querySelectorAll('.explore-card');
-
-  // Intersection Observer — fade-in on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-
-  cards.forEach(card => observer.observe(card));
-
-  // Subtle 3D tilt on mouse move (desktop only)
-  if (window.matchMedia('(hover: hover)').matches) {
-    cards.forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width - 0.5;
-        const y = (e.clientY - rect.top) / rect.height - 0.5;
-        const img = card.querySelector('.card-image');
-        img.style.transform = `scale(1.1) translate(${x * -10}px, ${y * -10}px)`;
-      });
-      card.addEventListener('mouseleave', () => {
-        const img = card.querySelector('.card-image');
-        img.style.transform = '';
-      });
-    });
-  }
-});
 
