@@ -68,5 +68,38 @@ document.querySelectorAll('.nav-link').forEach(link => {
   }
 });
 
+  // Animated counter for stats section
+  (function () {
+    const counters = document.querySelectorAll('.stat-number');
+    const duration = 2000; // total animation time in ms
 
+    const animateCount = (el) => {
+      const target = parseInt(el.dataset.target, 10) || 0;
+      const suffix = el.dataset.suffix || '';
+      const startTime = performance.now();
+
+      const tick = (now) => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        // ease-out cubic for a smooth deceleration
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const value = Math.floor(eased * target);
+        el.textContent = value + (progress === 1 ? suffix : '');
+        if (progress < 1) requestAnimationFrame(tick);
+      };
+
+      requestAnimationFrame(tick);
+    };
+
+    // Trigger when stats section enters viewport
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          observer.unobserve(entry.target); // run only once
+        }
+      });
+    }, { threshold: 0.4 });
+
+    counters.forEach((c) => observer.observe(c));
+  })();
 
