@@ -51,7 +51,7 @@ document.getElementById('navbar').innerHTML = `
           <li class="nav-item"><a class="nav-link" href="${base}pages/cities.html">Cities</a></li>
           <li class="nav-item"><a class="nav-link" href="${base}pages/food.html">Food</a></li>
           <li class="nav-item"><a class="nav-link" href="${base}pages/culture.html">Culture</a></li>
-          <li class="nav-item ms-2"><a class="btn btn-success px-4" href="${base}pages/signin.html">Sign In</a></li>
+          <li class="nav-item ms-2"><a class="btn btn-success px-4" href="${base}pages/sign in.html">Sign In</a></li>
         </ul>
       </div>
     </div>

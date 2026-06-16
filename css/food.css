@@ -1,0 +1,473 @@
+
+:root {
+  --green:       #1A8754;
+  --green-light: #e9f5ee;
+  --green-dark:  #145f3c;
+  --gold:        #d4af37;
+  --dark:        #1E1E1E;
+  --gray:        #6c757d;
+  --light-bg:    #F8F9FA;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--dark);
+  padding-top: 70px;
+}
+
+/* ============================================================
+   SHARED
+   ============================================================ */
+.section-tag {
+  font-size: 0.78rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--green);
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.section-desc {
+  color: var(--gray);
+  font-size: 0.97rem;
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.food-hero {
+  height: 90vh;
+  min-height: 540px;
+  background: url('../images/food.jpg') no-repeat center center / cover;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: foodHeroPan 20s ease-in-out infinite alternate;
+}
+
+@keyframes foodHeroPan {
+  0%   { background-position: 45% center; background-size: 108%; }
+  100% { background-position: 55% 30%;    background-size: 120%; }
+}
+
+.food-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 55%, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.7) 100%),
+    linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.65) 100%);
+}
+
+.food-hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 0 20px;
+  max-width: 760px;
+}
+
+.food-hero-tag {
+  font-size: 0.76rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeSlideDown 0.8s ease 0.3s forwards;
+}
+
+.ftag-line {
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+  display: inline-block;
+}
+
+.food-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 7.5vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  margin-bottom: 18px;
+}
+
+.fh-word {
+  display: inline-block;
+  margin: 0 0.1em;
+  opacity: 0;
+  transform: translateY(42px);
+  animation: wordRise 0.85s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+.fh-word:nth-child(1) { animation-delay: 0.5s; }
+.fh-word:nth-child(2) { animation-delay: 0.7s; }
+.fh-word:nth-child(3) { animation-delay: 0.9s; }
+
+.fh-italic { font-style: italic; color: rgba(255,255,255,0.75); }
+.fh-green  { color: var(--gold); }
+
+.food-hero-sub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.82);
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease 1.2s forwards;
+}
+
+.food-hero-pills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease 1.45s forwards;
+}
+
+.f-pill {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.22);
+  backdrop-filter: blur(8px);
+  padding: 8px 18px;
+  border-radius: 40px;
+  font-size: 0.84rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: white;
+  transition: background 0.3s, border-color 0.3s;
+  cursor: default;
+}
+
+.f-pill:hover {
+  background: rgba(212,175,55,0.22);
+  border-color: rgba(212,175,55,0.5);
+}
+/* ============================================================
+   CULINARY STORY SECTION
+   ============================================================ */
+.food-story-section { background: white; }
+
+.food-story-text {
+  color: var(--gray);
+  font-size: 0.97rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.food-story-stats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.f-stat { display: flex; flex-direction: column; }
+
+.f-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--green);
+  line-height: 1;
+}
+
+.f-stat-label {
+  font-size: 0.76rem;
+  color: var(--gray);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+.f-stat-divider {
+  width: 1px;
+  height: 44px;
+  background: #e0e0e0;
+  flex-shrink: 0;
+}
+
+.food-story-img-wrap {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 55px rgba(0,0,0,0.14);
+}
+
+.food-story-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.food-story-img-wrap:hover .food-story-img { transform: scale(1.04); }
+
+.food-story-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+  border-radius: 14px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.food-story-badge i   { color: var(--gold); font-size: 1.2rem; }
+.food-story-badge span { font-size: 0.82rem; font-weight: 600; color: var(--dark); }
+
+/* ============================================================
+   SPICE STRIP
+   ============================================================ */
+.spice-strip {
+  background: var(--green);
+  overflow: hidden;
+  padding: 13px 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.spice-inner {
+  display: flex;
+  white-space: nowrap;
+  animation: spiceScroll 30s linear infinite;
+}
+
+.spice-strip:hover .spice-inner { animation-play-state: paused; }
+
+.spice-inner span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.88);
+  font-size: 0.84rem;
+  font-weight: 500;
+  padding: 0 32px;
+  border-right: 1px solid rgba(255,255,255,0.2);
+}
+
+.spice-inner span i { color: var(--gold); font-size: 0.5rem; }
+
+@keyframes spiceScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ============================================================
+   GALLERY
+   ============================================================ */
+.food-gallery-section { background: var(--light-bg); }
+
+.food-filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.food-ftab {
+  background: white;
+  border: 2px solid #eee;
+  color: var(--dark);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.83rem;
+  font-weight: 500;
+  padding: 9px 20px;
+  border-radius: 40px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.25s ease;
+}
+
+.food-ftab:hover {
+  background: var(--green-light);
+  color: var(--green);
+  border-color: rgba(26,135,84,0.25);
+  transform: translateY(-2px);
+}
+
+.food-ftab.active {
+  background: var(--green);
+  color: white;
+  border-color: var(--green-dark);
+  box-shadow: 0 4px 14px rgba(26,135,84,0.3);
+}
+
+/* Cards */
+.food-card-item {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.food-card-item.visible  { opacity: 1; transform: translateY(0); }
+.food-card-item.hidden   { display: none !important; }
+
+.food-card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.07);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  height: 100%;
+}
+
+.food-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.13);
+}
+
+.food-card-img-wrap {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+}
+
+.food-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.food-card:hover .food-card-img { transform: scale(1.08); }
+
+.food-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26,135,84,0.92) 0%, rgba(26,135,84,0.4) 60%, transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 18px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.food-card:hover .food-card-overlay { opacity: 1; }
+
+.food-card-hover-desc {
+  color: white;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  margin: 0;
+  transform: translateY(8px);
+  transition: transform 0.4s ease;
+}
+
+.food-card:hover .food-card-hover-desc { transform: translateY(0); }
+
+.food-card-cat {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  backdrop-filter: blur(6px);
+}
+
+.traditional-cat { background: rgba(26,135,84,0.88); }
+.street-cat      { background: rgba(212,175,55,0.9); color: #1a1a1a; }
+.bbq-cat         { background: rgba(192,57,43,0.88); }
+.dessert-cat     { background: rgba(142,68,173,0.88); }
+
+.food-card-body   { padding: 18px 18px 20px; }
+
+.food-card-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.18rem;
+  color: var(--dark);
+  margin-bottom: 6px;
+}
+
+.food-card-desc {
+  color: var(--gray);
+  font-size: 0.84rem;
+  line-height: 1.55;
+  margin-bottom: 12px;
+}
+
+.food-card-origin {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--green);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.food-no-results {
+  text-align: center;
+  padding: 50px 20px;
+  color: var(--gray);
+}
+
+.food-no-results i {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 14px;
+  color: #ddd;
+}
+
+/* ============================================================
+   KEYFRAMES
+   ============================================================ */
+@keyframes wordRise {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideDown {
+  from { opacity: 0; transform: translateY(-14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .food-hero        { height: 78vh; }
+  .food-float       { display: none; }
+  .food-story-img   { height: 280px; }
+  .f-stat-num       { font-size: 1.6rem; }
+  .food-filter-tabs { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; }
+}
+
+@media (max-width: 480px) {
+  .food-hero-pills { flex-direction: column; align-items: center; }
+}

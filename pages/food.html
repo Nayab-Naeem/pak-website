@@ -3,119 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pak Trends - Food</title>
-  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <title>Food — Pak Trends</title>
+  <link rel="icon" type="image/png" href="../images/favicon.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/index.css">
-   <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <style>
-    .hero-section h1, .hero-section p {
-      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-    }
-
-    .food-img {
-  height: 230px;
-  object-fit: cover;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  transition: transform 0.3s ease;
-}
-.food-img:hover {
-  transform: scale(1.02);
-}
-
-  </style>
+  <link rel="stylesheet" href="../css/food.css">
 </head>
 <body>
 
- <!-- === Navbar Section ==== -->
-  <div id="navbar"></div>
-<script src="../js/navbar.js"></script>
+<!-- ===== NAVBAR ===== -->
+<div id="navbar"></div>
 
-
-<!-- Hero Section -->
-<section class="hero-section text-white text-center d-flex align-items-center" style="background-image: url('/images/food.jpg'); background-size: cover; background-position: center; height: 80vh; position: relative;">
-  <div class="overlay" style="position: absolute; inset: 0; background-color: rgba(0,0,0,0.6);"></div>
-  <div class="container position-relative z-2">
-    <h1 class="display-3 fw-bold">Taste of Pakistan</h1>
-    <p class="lead">A visual journey of spices, sweetness, and flavors that define our culture.</p>
-  </div>
-</section>
-
-
-<!-- History of Pakistani Food -->
-<section class="py-5 bg-white">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold text-success">A Culinary Tale of Pakistan</h2>
-      <p class="text-muted mx-auto" style="max-width: 750px;">
-        From the ancient spice routes to royal Mughal courts, Pakistani cuisine is a vibrant expression of heritage and heart. 
-        Every dish is steeped in tradition — where turmeric whispers warmth, cardamom sings of festivity, and saffron glows like golden memories.
-        <br><br>
-        Whether it’s the slow-simmered nihari enjoyed at dawn or the aroma of biryani at family gatherings, food in Pakistan is more than taste — 
-        it's a rhythm of hospitality, a poetry of spices, and a reflection of our collective soul. Across regions and generations, it connects hearts and preserves stories.
-      </p>
+<!-- ===== HERO ===== -->
+<section class="food-hero">
+  <div class="food-hero-overlay"></div>
+  <div class="food-hero-content">
+    <span class="food-hero-tag">
+      <span class="ftag-line"></span>
+      Pakistan's Culinary Heritage
+      <span class="ftag-line"></span>
+    </span>
+    <h1 class="food-hero-title">
+      <span class="fh-word">Taste</span>
+      <span class="fh-word fh-italic">of</span>
+      <span class="fh-word fh-green">Pakistan</span>
+    </h1>
+    <p class="food-hero-sub">A journey through spices, sweetness, and flavors that define our soul</p>
+    <div class="food-hero-pills">
+      <span class="f-pill"><i class="bi bi-fire"></i> BBQ & Grill</span>
+      <span class="f-pill"><i class="bi bi-egg-fried"></i> Street Food</span>
+      <span class="f-pill"><i class="bi bi-cup-hot-fill"></i> Traditional</span>
+      <span class="f-pill"><i class="bi bi-heart-fill"></i> Desserts</span>
     </div>
   </div>
+ 
 </section>
 
-
-
-<!-- Food Gallery -->
-<section class="py-5 bg-light">
+<!-- ===== CULINARY TALE ===== -->
+<section class="food-story-section py-5">
   <div class="container">
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card border-0 shadow-sm h-100">
-          <img src="/images/food 1.jpg" class="card-img-top food-img" alt="Traditional Dish">
-          <div class="card-body">
-            <p class="card-text text-muted small">Spice-kissed flavors served with warmth and tradition.</p>
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <span class="section-tag">Our Story</span>
+        <h2 class="section-title">A Culinary Tale<br>of Pakistan</h2>
+        <p class="food-story-text">
+          From ancient spice routes to royal Mughal courts, Pakistani cuisine is a vibrant expression of heritage and heart.
+          Every dish is steeped in tradition — where turmeric whispers warmth, cardamom sings of festivity, and saffron glows like golden memories.
+        </p>
+        <p class="food-story-text">
+          Whether it's the slow-simmered nihari at dawn or the aroma of biryani at family gatherings, food in Pakistan is more than taste —
+          it's a rhythm of hospitality, a poetry of spices, and a reflection of our collective soul.
+        </p>
+        <div class="food-story-stats">
+          <div class="f-stat">
+            <span class="f-stat-num">500+</span>
+            <span class="f-stat-label">Unique Dishes</span>
+          </div>
+          <div class="f-stat-divider"></div>
+          <div class="f-stat">
+            <span class="f-stat-num">4</span>
+            <span class="f-stat-label">Regional Cuisines</span>
+          </div>
+          <div class="f-stat-divider"></div>
+          <div class="f-stat">
+            <span class="f-stat-num">3000+</span>
+            <span class="f-stat-label">Years of Tradition</span>
           </div>
         </div>
       </div>
-
-      <div class="col-md-4">
-        <div class="card border-0 shadow-sm h-100">
-          <img src="/images/food 2.jpg" class="card-img-top food-img" alt="Traditional Dish">
-          <div class="card-body">
-            <p class="card-text text-muted small">A burst of color and culture in every bite.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card border-0 shadow-sm h-100">
-          <img src="/images/food 3.jpg" class="card-img-top food-img" alt="Traditional Dish">
-          <div class="card-body">
-            <p class="card-text text-muted small">Flavors that bring generations to the same table.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card border-0 shadow-sm h-100">
-          <img src="/images/food 4.jpg" class="card-img-top food-img" alt="Traditional Dish">
-          <div class="card-body">
-            <p class="card-text text-muted small">Charcoal, spice, and stories of the street.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card border-0 shadow-sm h-100">
-          <img src="/images/food 5.jpg" class="card-img-top food-img" alt="Traditional Dish">
-          <div class="card-body">
-            <p class="card-text text-muted small">Aromatic, soulful, and endlessly inviting.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card border-0 shadow-sm h-100">
-          <img src="/images/food 7.jpg" class="card-img-top food-img" alt="Traditional Dish">
-          <div class="card-body">
-            <p class="card-text text-muted small">An edible expression of joy and togetherness.</p>
+      <div class="col-lg-6">
+        <div class="food-story-img-wrap">
+          <img src="../images/food.jpg" alt="Pakistani Food" class="food-story-img">
+          <div class="food-story-badge">
+            <i class="bi bi-award-fill"></i>
+            <span>World's Finest Cuisine</span>
           </div>
         </div>
       </div>
@@ -123,10 +86,178 @@
   </div>
 </section>
 
- <!-- Footer -->
+<!-- ===== FOOD SPICE STRIP ===== -->
+<div class="spice-strip">
+  <div class="spice-inner">
+    <span><i class="bi bi-circle-fill"></i> Lahori Karahi</span>
+    <span><i class="bi bi-circle-fill"></i> Sindhi Biryani</span>
+    <span><i class="bi bi-circle-fill"></i> Peshawari Chapli Kebab</span>
+    <span><i class="bi bi-circle-fill"></i> Multani Sohan Halwa</span>
+    <span><i class="bi bi-circle-fill"></i> Nihari</span>
+    <span><i class="bi bi-circle-fill"></i> Sajji</span>
+    <span><i class="bi bi-circle-fill"></i> Halwa Puri</span>
+    <span><i class="bi bi-circle-fill"></i> Rabri</span>
+    <span><i class="bi bi-circle-fill"></i> Lahori Karahi</span>
+    <span><i class="bi bi-circle-fill"></i> Sindhi Biryani</span>
+    <span><i class="bi bi-circle-fill"></i> Peshawari Chapli Kebab</span>
+    <span><i class="bi bi-circle-fill"></i> Multani Sohan Halwa</span>
+    <span><i class="bi bi-circle-fill"></i> Nihari</span>
+    <span><i class="bi bi-circle-fill"></i> Sajji</span>
+    <span><i class="bi bi-circle-fill"></i> Halwa Puri</span>
+    <span><i class="bi bi-circle-fill"></i> Rabri</span>
+  </div>
+</div>
+
+<!-- ===== GALLERY ===== -->
+<section class="food-gallery-section py-5">
+  <div class="container">
+    <div class="text-center mb-4">
+      <span class="section-tag">Gallery</span>
+      <h2 class="section-title">Signature Dishes</h2>
+      <p class="section-desc">Each plate tells a story — of region, ritual, and recipe passed through generations.</p>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="food-filter-tabs mb-4" id="foodFilterTabs">
+      <button class="food-ftab active" data-filter="all" onclick="foodFilter('all', this)">
+        <i class="bi bi-grid-fill"></i> All
+      </button>
+      <button class="food-ftab" data-filter="traditional" onclick="foodFilter('traditional', this)">
+        <i class="bi bi-cup-hot-fill"></i> Traditional
+      </button>
+      <button class="food-ftab" data-filter="street" onclick="foodFilter('street', this)">
+        <i class="bi bi-bag-fill"></i> Street Food
+      </button>
+      <button class="food-ftab" data-filter="bbq" onclick="foodFilter('bbq', this)">
+        <i class="bi bi-fire"></i> BBQ
+      </button>
+      <button class="food-ftab" data-filter="dessert" onclick="foodFilter('dessert', this)">
+        <i class="bi bi-heart-fill"></i> Desserts
+      </button>
+    </div>
+
+    <!-- Food Grid -->
+    <div class="row g-4" id="foodGrid">
+
+      <div class="col-md-4 food-card-item" data-cat="traditional">
+        <div class="food-card reveal-card">
+          <div class="food-card-img-wrap">
+            <img src="../images/food 1.jpg" class="food-card-img" alt="Biryani" loading="lazy">
+            <span class="food-card-cat traditional-cat">Traditional</span>
+            <div class="food-card-overlay">
+              <p class="food-card-hover-desc">Aromatic basmati rice layered with spiced meat — Pakistan's most beloved dish.</p>
+            </div>
+          </div>
+          <div class="food-card-body">
+            <h5 class="food-card-name">Biryani</h5>
+            <p class="food-card-desc">Spice-kissed flavors served with warmth and tradition.</p>
+           
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 food-card-item" data-cat="traditional">
+        <div class="food-card reveal-card">
+          <div class="food-card-img-wrap">
+            <img src="../images/food 4.jpg" class="food-card-img" alt="Nihari" loading="lazy">
+            <span class="food-card-cat traditional-cat">Traditional</span>
+            <div class="food-card-overlay">
+              <p class="food-card-hover-desc">Slow-cooked beef stew simmered overnight — a royal breakfast turned national treasure.</p>
+            </div>
+          </div>
+          <div class="food-card-body">
+            <h5 class="food-card-name">Nihari</h5>
+            <p class="food-card-desc">A burst of color and culture in every bite.</p>
+           
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 food-card-item" data-cat="traditional">
+        <div class="food-card reveal-card">
+          <div class="food-card-img-wrap">
+            <img src="../images/food 3.jpg" class="food-card-img" alt="Karahi" loading="lazy">
+            <span class="food-card-cat traditional-cat">Traditional</span>
+            <div class="food-card-overlay">
+              <p class="food-card-hover-desc">Tomato-based wok-cooked curry of chicken or mutton — charred edges, bold soul.</p>
+            </div>
+          </div>
+          <div class="food-card-body">
+            <h5 class="food-card-name">Karahi</h5>
+            <p class="food-card-desc">Flavors that bring generations to the same table.</p>
+           
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 food-card-item" data-cat="bbq">
+        <div class="food-card reveal-card">
+          <div class="food-card-img-wrap">
+            <img src="../images/food 7.jpg" class="food-card-img" alt="Seekh Kebab" loading="lazy">
+            <span class="food-card-cat bbq-cat">BBQ</span>
+            <div class="food-card-overlay">
+              <p class="food-card-hover-desc">Minced meat threaded on skewers, kissed by charcoal — the king of Pakistani BBQ.</p>
+            </div>
+          </div>
+          <div class="food-card-body">
+            <h5 class="food-card-name">Seekh Kebab</h5>
+            <p class="food-card-desc">Charcoal, spice, and stories of the street.</p>
+          
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 food-card-item" data-cat="street">
+        <div class="food-card reveal-card">
+          <div class="food-card-img-wrap">
+            <img src="../images/food 5.jpg" class="food-card-img" alt="Halwa Puri" loading="lazy">
+            <span class="food-card-cat street-cat">Street Food</span>
+            <div class="food-card-overlay">
+              <p class="food-card-hover-desc">Fluffy fried bread with sweet semolina halwa — Sunday mornings in Pakistan.</p>
+            </div>
+          </div>
+          <div class="food-card-body">
+            <h5 class="food-card-name">Halwa Puri</h5>
+            <p class="food-card-desc">Aromatic, soulful, and endlessly inviting.</p>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 food-card-item" data-cat="dessert">
+        <div class="food-card reveal-card">
+          <div class="food-card-img-wrap">
+            <img src="../images/food 8.jpg" class="food-card-img" alt="Rabri" loading="lazy">
+            <span class="food-card-cat dessert-cat">Dessert</span>
+            <div class="food-card-overlay">
+              <p class="food-card-hover-desc">Thick condensed milk reduction with cardamom — dessert royalty from Mughal kitchens.</p>
+            </div>
+          </div>
+          <div class="food-card-body">
+            <h5 class="food-card-name">Rabri</h5>
+            <p class="food-card-desc">An edible expression of joy and togetherness.</p>
+            
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- No results -->
+    <div id="foodNoResults" class="food-no-results" style="display:none;">
+      <i class="bi bi-emoji-neutral"></i>
+      <p>No dishes in this category yet — check back soon!</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
 <div id="footer"></div>
-<script src="../js/index.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/index.js"></script>
+<script src="../js/food.js"></script>
+
 </body>
 </html>
