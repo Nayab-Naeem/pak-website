@@ -2,6 +2,8 @@
 /* ============================================================
    1. CITY DATA (single source of truth for modal content)
    ============================================================ */
+const WEATHER_API_KEY = "591ac9447cf9bb12f9ea2af38443ce5d";
+
 const CITY_DATA = {
   lahore: {
     name: "Lahore",
@@ -40,7 +42,7 @@ const CITY_DATA = {
     highlights: ["Faisal Mosque", "Margalla Hills", "Daman-e-Koh", "F-7 Markaz", "Pakistan Monument", "Lok Virsa Museum"]
   },
   hunza: {
-    name: "Hunza",
+    name: "Gilgit",
     province: "Gilgit-Baltistan",
     tagline: "Heaven on Earth",
     img: "../images/kash.jpg",
@@ -355,6 +357,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initProvincekeyboard();
   fixStickyOffset();
+   loadWeather();
 
   // Update result count on initial load
   const total = document.querySelectorAll('.city-item').length;
@@ -367,3 +370,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Also handle resize
 window.addEventListener('resize', fixStickyOffset);
+
+async function loadWeather() {
+  const cards = document.querySelectorAll(".city-item");
+
+  for (const card of cards) {
+    try {
+      const cityKey = card.dataset.name?.toLowerCase();
+      const city = CITY_DATA[cityKey]?.name;
+
+      if (!city) continue;
+
+      const res = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${city},PK&appid=${WEATHER_API_KEY}&units=metric`
+      );
+
+      const data = await res.json();
+
+      if (!data || !data.main || data.main.temp === undefined) {
+        continue;
+      }
+
+      const temp = Math.round(data.main.temp);
+      const iconCode = data.weather?.[0]?.icon;
+const description = data.weather?.[0]?.description;
+const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+
+      const weatherElement = card.querySelector(".city-temp");
+
+      if (weatherElement) {
+        weatherElement.innerHTML = `
+  <img src="${iconUrl}" class="weather-icon" />
+  <div class="weather-text">
+    <div class="temp">${temp}°C</div>
+    <div class="desc">${description}</div>
+  </div>
+`;
+      }
+
+    } catch (err) {
+      console.log("Weather API Error:", err);
+    }
+  }
+}

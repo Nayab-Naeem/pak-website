@@ -608,6 +608,7 @@ body {
 .city-body {
   padding: 20px 18px 18px;
   display: flex;
+  background-color:#aaa;
   flex-direction: column;
   flex: 1;
 }
@@ -635,6 +636,28 @@ body {
   align-items: center;
   gap: 4px;
 }
+
+.weather-icon {
+  width: 35px;
+  height: 35px;
+}
+
+.weather-text {
+  display: inline-block;
+  margin-left: 8px;
+  text-align: left;
+}
+
+.weather-text .temp {
+  font-weight: bold;
+}
+
+.weather-text .desc {
+  font-size: 12px;
+  color: gray;
+  text-transform: capitalize;
+}
+
 
 .city-desc {
   font-size: 0.86rem;
