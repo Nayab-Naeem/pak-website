@@ -1,49 +1,68 @@
-# 🌿 Pak Trends – Blogging Website
+# Pak Trends
 
-Pak Trends is a modern and responsive blogging website focused on Pakistani culture, fashion, food, cities, and Gen Z lifestyle. Built with HTML, CSS, Bootstrap, and JavaScript, the site offers a clean and minimal design with a touch of Pakistani green theme for authenticity and style.
+Pak Trends is a modern static travel showcase for Pakistan, featuring province and city discovery, local highlights, search and filter controls, and live weather integration for city cards.
 
-## 🚀 Features
-
-📰 Home Page – Introduction and featured blog sections
-
-🏙️ Cities Page – Explore major cities of Pakistan with highlights
-
-🍲 Food Page – Showcasing traditional and trending Pakistani foods
-
-🎭 Culture Page – Cultural traditions, festivals, and heritage
-
-👩‍💻 Lifestyle & Fashion – Gen Z trends and fashion insights
-
-🎨 Minimalist UI – Pakistani green (#1A8754) inspired theme
-
-📱 Responsive Layout – Optimized for desktop, tablet, and mobile
-
-## 📸 Preview
-
-![Home Page](assets/Home1.png)
-![Home Page](assets/Home2.png)
-![Home Page](assets/Home3.png)
-![Cities Page](assets/Cities1.png)
-![Cities Page](assets/Cities2.png)
-![Cities Page](assets/Cities3.png)
-![Food Page](assets/Food1.png)
-![Food Page](assets/Food2.png)
-![Culture Page](assets/Culture1.png)
-![Culture Page](assets/Culture2.png)
-![SignIn Page](assets/Signin.png)
-
-## 🔗 Live Demo
-
-[View Website](https://nayab-naeem.github.io/pak-website/)
+## Live Demo
 
 
+[Live Demo](https://paktrends-omega.vercel.app)
 
-# 🛠️ Tech Stack
+## Features
 
-HTML5 – Structure and semantic content
+- Province selector with branded province cards
+- City discovery grid with animated reveal cards
+- Search and filter by city, tags, or province
+- City detail modal with highlights and quick facts
+- Live weather integration via OpenWeatherMap
+- Responsive layout with Bootstrap and custom styling
+- Smooth scroll and animated interactions for a polished UX
 
-CSS3 – Styling and responsive design
+## Tech Stack
 
-Bootstrap 5 – Layout, navbar, and components
+- HTML5
+- CSS3
+- JavaScript (vanilla)
+- Bootstrap 5 for layout and responsive design
+- Bootstrap Icons for UI iconography
+- OpenWeatherMap API for live weather data
+- Vercel for deployment
 
-JavaScript (ES6) – Interactivity and animations
+## Project Structure
+
+```
+blog web/
+│
+├── assets/              # Static visual or content assets
+├── css/
+│   ├── cities.css       # Styles for the cities page
+│   ├── culture.css      # Styles for the culture page
+│   ├── food.css         # Styles for the food page
+│   └── index.css        # Shared and homepage styles
+├── images/              # Image assets used throughout the site
+├── js/
+│   ├── cities.js        # Cities page behavior and weather integration
+│   ├── culture.js       # Culture page scripts
+│   ├── food.js          # Food page scripts
+│   └── index.js         # Shared homepage scripts
+├── pages/
+│   ├── cities.html      # Cities showcase page
+│   ├── culture.html     # Culture showcase page
+│   ├── food.html        # Food showcase page
+│   └── sign in.html     # Sign-in page UI mockup
+├── index.html           # Main landing page
+├── README.md            # Project documentation
+└── LICENSE              # Project license
+```
+
+## How to Use
+
+1. Open `index.html` or `pages/cities.html` in a browser.
+2. Use the province filters or search bar to narrow down cities.
+3. Click `Explore` on any city card to open the modal.
+4. For live weather, add an OpenWeatherMap API key to `js/cities.js`.
+
+## Notes
+
+- The live weather feature requires a valid OpenWeatherMap API key.
+- If weather is unavailable, the UI gracefully falls back to hardcoded city temperatures.
+- Update the live demo URL in this README once the site is hosted.
