@@ -358,6 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProvincekeyboard();
   fixStickyOffset();
    loadWeather();
+    loadProvinceWeather();
 
   // Update result count on initial load
   const total = document.querySelectorAll('.city-item').length;
@@ -410,6 +411,40 @@ const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
 
     } catch (err) {
       console.log("Weather API Error:", err);
+    }
+  }
+}
+
+async function loadProvinceWeather() {
+  const mapping = {
+    punjab: 'Lahore',
+    sindh: 'Karachi',
+    kpk: 'Peshawar',
+    balochistan: 'Quetta'
+  };
+
+  for (const [prov, city] of Object.entries(mapping)) {
+    try {
+      const res = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${city},PK&appid=${WEATHER_API_KEY}&units=metric`
+      );
+      const data = await res.json();
+      if (!data || !data.main || data.main.temp === undefined) continue;
+
+      const temp = Math.round(data.main.temp);
+      const iconCode = data.weather?.[0]?.icon;
+      const description = data.weather?.[0]?.description || '';
+      const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+
+      const card = document.querySelector(`.prov-card[data-province="${prov}"]`);
+      if (!card) continue;
+
+      const el = card.querySelector('.prov-temp');
+      if (el) {
+        el.innerHTML = `\n  <img src="${iconUrl}" class="weather-icon" />\n  <div class="weather-text">\n    <div class="temp">${temp}°C</div>\n    <div class="desc">${description}</div>\n  </div>\n`;
+      }
+    } catch (err) {
+      console.log('Province weather error:', prov, err);
     }
   }
 }

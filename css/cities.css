@@ -314,6 +314,10 @@ body {
 .prov-body {
   padding: 22px 18px 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: #aaa;
 }
 
 .prov-icon {
@@ -375,6 +379,12 @@ body {
 .sindh-count   { background: rgba(74,144,194,0.12);  color: var(--sindh); }
 .kpk-count     { background: rgba(76,175,80,0.12);   color: var(--kpk); }
 .baloch-count  { background: rgba(194,84,80,0.12);   color: var(--balochistan); }
+
+/* Province temp color variants (use province palette for visibility) */
+.prov-card[data-province="punjab"] .prov-temp { background: rgba(232,169,60,0.12); color: var(--punjab); }
+.prov-card[data-province="sindh"]  .prov-temp { background: rgba(74,144,194,0.12);  color: var(--sindh); }
+.prov-card[data-province="kpk"]    .prov-temp { background: rgba(76,175,80,0.12);   color: var(--kpk); }
+.prov-card[data-province="balochistan"] .prov-temp { background: rgba(194,84,80,0.12);   color: var(--balochistan); }
 
 /* ============================================================
    SEARCH + FILTER BAR
